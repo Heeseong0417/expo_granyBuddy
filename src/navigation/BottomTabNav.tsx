@@ -4,6 +4,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import { Dimensions, useWindowDimensions } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { CardStyleInterpolators } from 'react-navigation-stack';
+import { SafeAreaProvider } from "react-native-safe-area-context"
 import HomeScreen from './HomeScreen';
 import Main_home from './Main_home';
 import Navigation from './Navigation';
@@ -16,6 +17,7 @@ const WINDOW_WIDHT = Dimensions.get("window").width; // Dimensions.get("screen")
 const WINDOW_HEIGHT = Dimensions.get("window").height;
 function BottomTabNav() {
   return (
+    <SafeAreaProvider>
     <Tab.Navigator 
     labeled={true}
     backBehavior={"firstRoute"}
@@ -77,7 +79,7 @@ function BottomTabNav() {
         ),
       }}
     />
-  </Tab.Navigator>
+  </Tab.Navigator></SafeAreaProvider>
   );
 }
 export default BottomTabNav;

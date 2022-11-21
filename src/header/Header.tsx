@@ -31,16 +31,18 @@ const [user, setuser] = useState("")
     return(
     <>
     <StatusBar backgroundColor="#fff" barStyle="light-content" />
+    <Text style={[{position:"absolute",alignSelf:"center",top:20},grany_home.main_ht]}>{name}</Text>
     <View style={[grany_home.main_header]}>
    <View>
-     <Text style={[grany_home.main_ht]}>{name}</Text>
+     <Text style={[grany_home.main_ht]}></Text>
    </View>
-   
-  <TouchableOpacity style={[styles_main.header_text,{borderRadius:100}]} onPress={()=> nav()}>
-    <Icon onTextLayout={()=>"my"}  color={"black"} name={"md-person-circle-outline"} size={WINDOW_WIDHT/15}/>
-  </TouchableOpacity>
-      
+ 
 
+ 
+  <TouchableOpacity style={[styles_main.header_text,{position:"absolute",alignSelf:"auto",right:20,top:10}]} onPress={()=> nav()}>
+    <Icon onTextLayout={()=>"my"}  color={"black"} name={"md-person-circle-outline"} size={WINDOW_WIDHT/10}/>
+  </TouchableOpacity>
+       
     </View>
  
 

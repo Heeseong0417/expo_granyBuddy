@@ -160,6 +160,7 @@ header_black:{
   fontFamily:"GmarketSansTTFLight",
   fontSize:WINDOW_WIDHT/20
 },header_text:{
+ 
   justifyContent:"space-between",color:"#fff",fontWeight:"700",fontFamily:"GmarketSansTTFLight",fontSize:WINDOW_WIDHT/20
 
 },stick:{
@@ -554,8 +555,8 @@ elevation: 5
   export const grany_home = StyleSheet.create({
     main_con:{
       flex:1,
-    
-      padding:10,
+    padding:10
+      
      
     },
     items_con:{
@@ -587,9 +588,12 @@ elevation: 5
 
   },
   main_header:{
+    
+  
+    flexDirection:"row",
     backgroundColor:"f000",
     textAlign:"center",
-    justifyContent:"space-between",
+    justifyContent:"space-around",
     alignItems:"center",
     color:"#1A1818",
     height:WINDOW_HEIGHT/13,
@@ -601,6 +605,7 @@ elevation: 5
     
   },
   main_ht:{
+    
     color:"black",
         opacity:0.8,
         fontFamily:"GmarketSansTTFMedium",
@@ -638,9 +643,128 @@ elevation: 5
   },main_box:{
     margin:5,
     padding:5,
-    flexDirection:"row"
+    flexDirection:"row",
+    borderRadius:20,
+   
+    
+  },main_c_con:{
+    
+    width:WINDOW_WIDHT,
+    height:WINDOW_HEIGHT/9,
+   justifyContent:"center",
+   alignItems:"center",
+   textAlign:"center" 
 
-  }
+  },main_car_div:{
+    flex: 1,
+    
+    justifyContent: "space-around",
+    alignItems: 'center',  
+  },
+
+  main_carousel:{
+   
+  
+      flex: 1,
+      justifyContent: "center",
+      alignItems: 'center',
+  
+  
+
+  },maim_car_img:{
+    flex: 2,
+    justifyContent: "center",
+    alignItems: 'center', 
+  },main_car_text:{
+    flex: 3,
+    justifyContent: "center",
+    alignItems: 'center', 
+  },
+  main_list_item1:{
+    flexGrow:1,
+     justifyContent: "center",
+    width:WINDOW_WIDHT,
+    textAlign:"center"
+   
+   
+  },main_list_item2:{
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: 'center'
+  },
+  list_view:{
+    flex: 1,
+    flexDirection:"row",
+    justifyContent: 'center',
+    alignSelf: 'center',
+    
+    },
+    list_title:{
+    color:"gray",
+    fontSize:WINDOW_WIDHT/22,
+    fontWeight:"bold",
+    fontFamily:"GmarketSansTTFMedium",
+    opacity:0.8,
+    margin:5
+    },
+    extra_bold : {
+      fontSize:WINDOW_WIDHT/13,
+      fontWeight:"900",
+      fontFamily:"GmarketSansTTFMedium",
+      opacity:0.8,
+      margin:5  
+    },extra_bold_g:{
+      fontSize:WINDOW_WIDHT/15,
+      fontWeight:"900",
+      fontFamily:"GmarketSansTTFMedium",
+      opacity:0.8,
+        
+      color:"#73AF00"
+
+    },extra_bold_y:{
+      fontSize:WINDOW_WIDHT/15,
+      fontWeight:"900",
+      fontFamily:"GmarketSansTTFMedium",
+      opacity:0.8,
+        
+      color:"#FFC248"
+
+    },unit_text:{
+      fontSize:WINDOW_WIDHT/25,
+      fontWeight:"900",
+      fontFamily:"GmarketSansTTFMedium",
+      opacity:0.8,
+      marginLeft:5,
+      color:"black"
+        
+     
+    }
+    ,div_text:{
+      fontSize:WINDOW_WIDHT/20,
+      fontWeight:"bold",
+      fontFamily:"GmarketSansTTFMedium",
+      opacity:0.8,
+      margin:5  
+    },
+    list_item_title:{
+      color:"gray",
+    fontSize:WINDOW_WIDHT/25,
+
+    fontFamily:"GmarketSansTTFMedium",
+    opacity:0.8,
+    margin:5
+      },
+      flex_b:{
+        fontSize:WINDOW_WIDHT/18,
+        fontWeight:"900",
+        fontFamily:"GmarketSansTTFMedium",
+        opacity:0.8,
+        margin:5  
+      },flex_button:{
+        width:WINDOW_WIDHT,
+        flex:1,flexDirection:"row",justifyContent:"space-between",alignItems:"center"
+      }
+  
   
   })
       
