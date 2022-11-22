@@ -12,7 +12,7 @@ const Stack = createSharedElementStackNavigator();
 
 export default function Navigation({navigation}:any) {
   return (
-    <SafeAreaProvider>
+   
    
       <Stack.Navigator initialRouteName='HomeScreen'
     screenOptions={{ headerShown: false,
@@ -36,8 +36,7 @@ export default function Navigation({navigation}:any) {
    
         />
       </Stack.Navigator>
-    
-    </SafeAreaProvider>
+   
   );
 }
 /**

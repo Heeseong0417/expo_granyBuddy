@@ -12,6 +12,7 @@ import { styles_main, styles_test } from '../style/Styles';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import {Text, View} from "react-native-animatable"
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Header_create } from '../header/Header';
 
 // other import settings...
 
@@ -99,12 +100,12 @@ const KakaoLogin = ({ }) => {
  
       const Modal_data =()=>{
         return (  <>
-            
+            <Header_create name={"회원 정보"} nav={a}/>
       <View style={[{backgroundColor:"white"},styles_test.modal_style]}>
  
          
   
-          <Text style={[styles_main.main_card_sub,{paddingTop:10,paddingLeft:10}]}>회원 정보</Text>
+      
           
           <View style={styles_main.stick}/>     
 

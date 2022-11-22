@@ -11,13 +11,16 @@ import Navigation from './Navigation';
 import None1 from './None';
 import { grany_home } from '../style/Styles';
 import Grany_main from './Grany_main';
-
+import IC from "../CertificationTest/index"
+import Certification from '../Certification';
+import CertificationResult from '../CertificationResult';
+import KakaoLogin from '../kakao/KakaoLogin';
 const Tab = createMaterialBottomTabNavigator();
 const WINDOW_WIDHT = Dimensions.get("window").width; // Dimensions.get("screen").width;
 const WINDOW_HEIGHT = Dimensions.get("window").height;
 function BottomTabNav() {
   return (
-    <SafeAreaProvider>
+  
     <Tab.Navigator 
     labeled={true}
     backBehavior={"firstRoute"}
@@ -25,13 +28,15 @@ function BottomTabNav() {
     initialRouteName="홈"
     shifting={true}
       activeColor="#4A319A"
-      barStyle={{ backgroundColor: '#0073F0' }}
+      inactiveColor='#fff'
+      
+      barStyle={{ backgroundColor: '#0073F0',opacity:0.8,maxHeight:100}}
   >
     
     <Tab.Screen
       name="HOME"
       
-      component={Navigation}
+      component={Grany_main}
       
       options={{
         
@@ -45,26 +50,26 @@ function BottomTabNav() {
       
       <Tab.Screen
       name="버디예약"
-      component={Grany_main}
+      component={KakaoLogin}
       
       options={{
         
         
         tabBarLabel: '버디예약',
         tabBarIcon: ({ color }) => (
-          <MaterialCommunityIcons name="home" color={color} size={26} />
+          <MaterialCommunityIcons name="clipboard-text-outline" color={color} size={26} />
         ),
       }}
       
     />
     <Tab.Screen
       name="결과"
-      component={None1}
+      component={IC}
       options={{
         tabBarLabel: '결과',
         tabBarBadge: 3,
         tabBarIcon: ({ color }) => (
-          <MaterialCommunityIcons name="bell" color={color} size={26} />
+          <MaterialCommunityIcons name="clock-check-outline" color={color} size={26} />
         ),
         
       }}
@@ -75,11 +80,22 @@ function BottomTabNav() {
       options={{
         tabBarLabel: '사용자',
         tabBarIcon: ({ color }) => (
-          <MaterialCommunityIcons name="account" color={color} size={26} />
+          <MaterialCommunityIcons name="account-box-multiple-outline" color={color} size={26} />
         ),
       }}
     />
-  </Tab.Navigator></SafeAreaProvider>
+   {/**<Tab.Screen
+         
+          name="Certification"
+          component={Certification}
+        />
+         <Tab.Screen
+         
+         name="CertificationResult"
+         component={CertificationResult}
+       />
+    **/}
+  </Tab.Navigator>
   );
 }
 export default BottomTabNav;

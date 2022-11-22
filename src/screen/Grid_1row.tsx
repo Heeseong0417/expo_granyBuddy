@@ -5,11 +5,11 @@ import { grany_home } from "../style/Styles"
 const Grid_1row =({list_item}:any)=>{
     const renderItem = ({ item }:any) => (
         <View
-        style={{
+        style={[{
           flex:1,
           flexDirection:'column',
           margin:10
-        }}>
+        },grany_home.main_shadow]}>
            {item.name =="다음 검진"? (<View style={[grany_home.main_list_item2]}><Text style={[grany_home.div_text]}>{item.value[0]}</Text><Text style={[]}>{item.value[1]}</Text></View>):
            (<View style={[grany_home.main_list_item2]}><Text style={[grany_home.extra_bold]}>{item.value}</Text></View>)}
            <View style={[grany_home.list_view]}><Text style={[grany_home.list_item_title]}>{item.name}</Text></View> 
@@ -19,7 +19,7 @@ const Grid_1row =({list_item}:any)=>{
 
 
     return(<>
-    <View style={{flex:1}}>
+    <View style={[{flex:1}]}>
         <View style={[grany_home.list_view]}>
     
         

@@ -4,19 +4,27 @@ import { styles_test,grany_home } from "../style/Styles"
 import {Header_create} from "../header/Header"
 import Slide_user from "../screen/Slide_user"
 import cdfd from "../assets/images/flower-.jpg"
-import { StyleSheet } from "react-native"
+import { Alert, StyleSheet } from "react-native"
 import { SectionGrid } from 'react-native-super-grid';
 import React from "react"
 import Griditems from "../screen/Griditems"
 import Grid_1row from "../screen/Grid_1row"
-import Find_buddy from "../screen/Find_buddy"
+import Flex_button from "../screen/Flex_button"
+import { ScrollView } from "react-native-gesture-handler"
+import UserCarousel from "../screen/UserCarousel"
+import map from "../assets/images/map.png"
+import chart from "../assets/images/chart.png"
 const Grany_main =({navigation}:any)=>{
+  const run_event =()=>{
+    Alert.alert("구현중입니다.")
+  }
 const back =()=>{
 navigation.goBack()
 }
 const img = "../assets/images/flower-.jpg"
 const img2 = "../assets/images/daisy.jpg"
-const pic_arr = [[require(img),require(img2)],["user1","user2"]]
+const pic_arr2 = [[],[],[]]
+const pic_arr = [[require(img),require(img2)],["user1","user2"],["2021/11/22","2021/11/22"]]
 const [items_1, setItems_1] = React.useState([
     {name:"주의 항목",value:"1"},
     {name:"위험 항목",value:"0"},
@@ -33,17 +41,31 @@ const [items, setItems] = React.useState([
    {name:"남은 검진",value:["10","12"]}
   ]);
     return(<>
+     <Header_create name={"HOME"} nav={back}/>
+
+  <ScrollView
+    indicatorStyle='white'
+    contentContainerStyle={{backgroundColor:"white"  }}
+  >
+    <View style={{flex:1,margin:5}}>
+     <UserCarousel user_list={pic_arr}/> 
+    </View>
+
+ <View style={{flex:1}}>
   
-        <Header_create name={"HOME"} nav={back}/>
-   <View style={{flex:1}}>
-    <Slide_user pic_path={pic_arr} />
-    
+ 
+     
     <View style={[{flex:3}]}>
       <Grid_1row list_item={items_1}/>    
     <Griditems list_item={items}/>
     </View> 
-    <Find_buddy/>
- </View>
+    <Flex_button title={"주변의 버디 찾기"} img={map} run_event={run_event} size={"small"}/>
+    <Flex_button title={"상세 검색 결과"} img={chart} run_event={run_event} size={"big"}/>
+ </View> 
+</ScrollView>
+  
+       
+   
     </>)
 }
 

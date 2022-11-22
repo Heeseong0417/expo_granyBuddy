@@ -147,13 +147,13 @@ height:WINDOW_HEIGHT/4,
   
   export const styles_main = StyleSheet.create({
 header_black:{
-  backgroundColor: "#007FFF", 
+ 
   height:20
 },
     header_con:{
   flexDirection:"row",
   paddingTop:10,
-  backgroundColor: "#007FFF",
+
   justifyContent:"space-around",
   color:"#fff",
   fontWeight:"700",
@@ -589,24 +589,22 @@ elevation: 5
   },
   main_header:{
     
-  
+ 
     flexDirection:"row",
-    backgroundColor:"f000",
+    backgroundColor:"#fff",
     textAlign:"center",
     justifyContent:"space-around",
     alignItems:"center",
-    color:"#1A1818",
+    
     height:WINDOW_HEIGHT/13,
     fontFamily:"GmarketSansTTFBold",
-    fontSize:500,
-    fontWeight:"800"
   },
   main_header_i:{
     
   },
   main_ht:{
     
-    color:"black",
+    color:"#000",
         opacity:0.8,
         fontFamily:"GmarketSansTTFMedium",
         fontSize:WINDOW_WIDHT/20,
@@ -634,19 +632,22 @@ elevation: 5
     opacity:0.9,
     width:WINDOW_HEIGHT/13,
     height:WINDOW_HEIGHT/13
-  },click_timg:{
-    borderRadius:100,
+  },main_simg:{
+
+    borderRadius:10,
     margin:5,
     opacity:0.8,
     width:WINDOW_HEIGHT/13,
     height:WINDOW_HEIGHT/13 
   },main_box:{
-    margin:5,
-    padding:5,
+    
     flexDirection:"row",
     borderRadius:20,
-   
-    
+    borderWidth:1,
+    opacity:0.8,
+    padding:20,
+    borderColor:"#f0f0f0"
+  
   },main_c_con:{
     
     width:WINDOW_WIDHT,
@@ -656,9 +657,11 @@ elevation: 5
    textAlign:"center" 
 
   },main_car_div:{
+   
     flex: 1,
     
-    justifyContent: "space-around",
+    height:WINDOW_HEIGHT/8,
+    justifyContent: "center",
     alignItems: 'center',  
   },
 
@@ -757,14 +760,38 @@ elevation: 5
       flex_b:{
         fontSize:WINDOW_WIDHT/18,
         fontWeight:"900",
-        fontFamily:"GmarketSansTTFMedium",
+        fontFamily:"GmarketSansTTFBold",
         opacity:0.8,
         margin:5  
       },flex_button:{
         width:WINDOW_WIDHT,
-        flex:1,flexDirection:"row",justifyContent:"space-between",alignItems:"center"
-      }
-  
+        flex:1,flexDirection:"row",justifyContent:"space-around",alignItems:"center",textAlign:"center"
+      },flex_button2:{
+        
+        width:WINDOW_WIDHT,
+        flex:1,flexDirection:"row",justifyContent:"space-around",alignItems:"center"
+      },user_name:{
+        color:"black",
+        fontSize:WINDOW_WIDHT/23,
+        fontWeight:"900",
+        fontFamily:"GmarketSansTTFMedium",
+        opacity:0.8,
+        marginHorizontal:5
+      },user_sub_name:{
+        color:"black",
+        fontSize:WINDOW_WIDHT/23,
+        
+        fontFamily:"GmarketSansTTFMedium",
+        opacity:0.8,
+        margin:5
+      },stick:{
+        paddingHorizontal:10,
+        margin:10,
+      borderBottomWidth:1,
+      opacity:0.3,
+      color:"gray"
+      
+      },
   
   })
       

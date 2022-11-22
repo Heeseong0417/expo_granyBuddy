@@ -1,62 +1,40 @@
 import Swiper from "react-native-swiper"
-import {Text,View,StyleSheet} from  "react-native"
+import {Text,View,StyleSheet, Dimensions, TouchableOpacity, Alert} from  "react-native"
 import { grany_home, styles_main, styles_slider } from "../style/Styles";
-
-
-const UserCarousel =()=>{
-    const styles = StyleSheet.create({
-        wrapper: {},
-        slide1: {
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: '#9DD6EB'
-        },
-        slide2: {
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: '#97CAE5'
-        },
-        slide3: {
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: '#92BBD9'
-        },
-        text: {
-          color: '#fff',
-          fontSize: 30,
-          fontWeight: 'bold'
-        }
-      })
+import { Image } from "react-native-animatable";
+import grany from "../assets/grany.png"
+import Icon from "react-native-vector-icons/MaterialCommunityIcons"
+const UserCarousel =({user_list}:any)=>{
+  const WINDOW_WIDHT = Dimensions.get("window").width; // Dimensions.get("screen").width;
+  const WINDOW_HEIGHT = Dimensions.get("window").height;  
+  
     return(<>
-  <Swiper showsButtons={false} paginationStyle={{ bottom: 5 }}>
-        <View style={grany_home.main_carousel}>
-            <View style={[grany_home.main_car_div]}>
-
-               <View style={grany_home.maim_car_img}>
-                <Text>img</Text>
-               </View>
-
-               <View style={grany_home.main_car_text}>
-                      <Text>김옥순님</Text>    
-                    <Text>마지막 체크 : 2022.10.07</Text>
-               </View>
-
-            </View>
-          
-        </View>
-        <View style={[styles_slider.slide1,{marginBottom:30}]}>
-  <View style={[styles_main.main_card_divide]}>
-      <View style={[styles_main.main_card_same]}></View>
-       <View style={[styles_main.main_card_same,{alignItems:"center",padding:20}]}>
-        <Text style={[styles_main.main_card_sub]}>{"   주민 차량  "}</Text>
-        <Text style={[styles_main.main_card_text]}>dfdfddf</Text>
+    <View style={[grany_home.main_car_div,grany_home.main_shadow]}>
+  <Swiper showsButtons={false} autoplay={true} paginationStyle={{ bottom: 1}} dotColor={"#c0c0c0"} activeDotColor={"gray"}>
+    {user_list[1].length == 0 ? (<><Text style={[grany_home.flex_button]}>등록된 사용자가 없습니다.</Text></>):
+    user_list[1].map((item: any,index: any)=> (
+    <>
+    <TouchableOpacity style={[grany_home.flex_button,grany_home.main_shadow]} onPress={()=> Alert.alert("구현 중")}>
+    
+    <View style={{flexDirection:"row",height:100, alignItems:"center",justifyContent:"space-between"}}>
+       <View style={{flexDirection:"row",height:100, alignItems:"center",justifyContent:"space-around"}}>
+        
+        <Image source={user_list[0][index]}  style={[grany_home.main_timg]} />
+        <View><Text style={[grany_home.user_name]}>{user_list[1][index]} 님</Text><Text style={[grany_home.list_item_title]}>마지막 체크 {user_list[2][index]}</Text></View>
+       
        </View>
+       
+       
+       
       </View>
-      </View>
-      </Swiper>
+      <Icon onTextLayout={()=>"my"}  color={"gray"} name={"chevron-right"} size={WINDOW_WIDHT/10}/>
+            </TouchableOpacity></>
+      )
+      
+      )}
+
+   
+      </Swiper></View>
     </>)
 }
 

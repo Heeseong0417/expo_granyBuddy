@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 
 
-
+import grany from "../assets/logo/logo_a.gif"
 import {View} from 'react-native-animatable';
 import Fastimg from'react-native-fast-image'
 import { Image } from 'react-native-animatable';
@@ -13,6 +13,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import AppLoding from "expo-app-loading"
 import * as Font from 'expo-font';
 import Main_home from '../navigation/Main_home';
+import { NativeBaseProvider } from 'native-base';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 const WINDOW_WIDHT = Dimensions.get("window").width; // Dimensions.get("screen").width;
 const WINDOW_HEIGHT = Dimensions.get("window").height;
 
@@ -42,7 +44,7 @@ export  const Main: any =()=>{
       {
 isReady? (splash ? (<>
 
-<View style={{backgroundColor:"#5271ff",flex:1,justifyContent:"center"}}><Image source={comax}  style={{backgroundColor:"#5271ff",width:WINDOW_WIDHT,height:WINDOW_WIDHT}} /></View></>):(<Main_home/>)):
+<View style={{backgroundColor:"#fff",flex:1,justifyContent:"center"}}><Image source={grany}  style={{width:WINDOW_WIDHT,height:WINDOW_WIDHT}} /></View></>):(<NativeBaseProvider><SafeAreaProvider><Main_home/></SafeAreaProvider></NativeBaseProvider>)):
 (<AppLoding startAsync={getFonts} onFinish={() => setIsReady(true)} onError={() => {}}/>)
 
       }
