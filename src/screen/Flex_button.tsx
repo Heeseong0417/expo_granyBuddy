@@ -13,7 +13,8 @@ const Flex_button =({title,img,run_event,size}:any)=>{
         
       
         <View  style={[{flex:1,flexDirection:"row",margin:10,marginTop:30,justifyContent:"center",alignItems:"center",backgroundColor:"#fff"},grany_home.main_box]}>
-        <TouchableOpacity style={[grany_home.flex_button,grany_home.main_shadow]} onPress={()=> run_event()}>
+       
+        <TouchableOpacity style={[grany_home.flex_button]} onPress={()=> run_event()}>
 
         
         <Text style={[grany_home.flex_b,{justifyContent:"flex-start"}]}>{title}</Text>

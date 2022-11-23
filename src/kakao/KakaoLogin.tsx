@@ -13,16 +13,17 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import {Text, View} from "react-native-animatable"
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Header_create } from '../header/Header';
-
+import Postcode from '@actbase/react-daum-postcode';
 // other import settings...
 
 const runFirst = `window.ReactNativeWebView.postMessage("this is message from web");`;
 
  
 
-const KakaoLogin = ({ }) => {
-    
+const KakaoLogin = ({navigation}:any) => {
+  const [isModal, setModal] = useState(false);
     const [userProfile, setuserProfile] = useState({nickname:"",profile_image:""})
+    const [user_id, setuser_id] = useState("")
     const [token_save, settoken_save] = useState("")
     const [isModalVisible, setModalVisible] = useState(false);
     const [switch_, setswitch_] = useState(0)
@@ -108,8 +109,16 @@ const KakaoLogin = ({ }) => {
       
           
           <View style={styles_main.stick}/>     
-
-      
+<Text>유저 아이디 : {user_id}</Text>
+<Modal isVisible={isModal}>
+<Postcode
+                style={{ width: 320, height: 320 }}
+                jsOptions={{ animation: true }}
+                onSelected={data => alert(JSON.stringify(data))} onError={function (error: unknown): void {
+                  throw new Error('Function not implemented.');
+                } }  />
+  </Modal>
+      <TouchableOpacity onPress={() => setModal(true)}><Text>주소찾기</Text></TouchableOpacity>
        <View style={[styles_main.main_card_divide]}>
   <Image style={[styles_main.main_card_img]} source={{uri:userProfile.profile_image}}></Image>
   <View style={[styles_main.main_card_divt]}>
@@ -236,7 +245,9 @@ console.log("request_id : ",request_id)
          
       
        setuserProfile(data => data = response.data.properties)
+       setuser_id(data=> data = response.data.id)
        AsyncStorage.setItem('nickname',response.data.properties.nickname)
+       console.log("kakao info : ", response.data)
        console.log(response.data.properties.nickname)
        AsyncStorage.setItem('profile_image',response.data.properties.profile_image)
        console.log(response.data.properties.profile_image)

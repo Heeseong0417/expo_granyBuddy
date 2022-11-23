@@ -1,10 +1,10 @@
-import { SafeAreaProvider } from "react-native-safe-area-context"
+import { SafeAreaInsetsContext, SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context"
 import {View,Text} from "react-native-animatable"
 import { styles_test,grany_home } from "../style/Styles"
 import {Header_create} from "../header/Header"
 import Slide_user from "../screen/Slide_user"
 import cdfd from "../assets/images/flower-.jpg"
-import { Alert, StyleSheet } from "react-native"
+import { Alert, StatusBar, StyleSheet } from "react-native"
 import { SectionGrid } from 'react-native-super-grid';
 import React from "react"
 import Griditems from "../screen/Griditems"
@@ -41,6 +41,10 @@ const [items, setItems] = React.useState([
    {name:"남은 검진",value:["10","12"]}
   ]);
     return(<>
+  
+  <SafeAreaView style={grany_home.m_v} edges={['top', 'left', 'right']}>
+
+
      <Header_create name={"HOME"} nav={back}/>
 
   <ScrollView
@@ -63,7 +67,7 @@ const [items, setItems] = React.useState([
     <Flex_button title={"상세 검색 결과"} img={chart} run_event={run_event} size={"big"}/>
  </View> 
 </ScrollView>
-  
+ </SafeAreaView> 
        
    
     </>)

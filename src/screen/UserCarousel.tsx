@@ -9,7 +9,7 @@ const UserCarousel =({user_list}:any)=>{
   const WINDOW_HEIGHT = Dimensions.get("window").height;  
   
     return(<>
-    <View style={[grany_home.main_car_div,grany_home.main_shadow]}>
+    <View style={[grany_home.main_car_div]}>
   <Swiper showsButtons={false} autoplay={true} paginationStyle={{ bottom: 1}} dotColor={"#c0c0c0"} activeDotColor={"gray"}>
     {user_list[1].length == 0 ? (<><Text style={[grany_home.flex_button]}>등록된 사용자가 없습니다.</Text></>):
     user_list[1].map((item: any,index: any)=> (

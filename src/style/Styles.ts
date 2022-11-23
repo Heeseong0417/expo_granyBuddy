@@ -558,6 +558,15 @@ elevation: 5
     padding:10
       
      
+    },m_v:{flex:1,width:WINDOW_WIDHT,height:WINDOW_HEIGHT,backgroundColor:"#fff"
+  },
+    main_view:{
+      flex:1,
+      flexDirection:"column",
+      justifyContent:"center",
+      alignItems:"center",
+      textAlign:"center",
+      
     },
     items_con:{
       flex:1,
@@ -642,6 +651,15 @@ elevation: 5
   },main_box:{
     
     flexDirection:"row",
+    borderRadius:20,
+    borderWidth:1,
+    opacity:0.8,
+    padding:20,
+    borderColor:"#f0f0f0"
+  
+  },main_box_col:{
+    flex:1,
+    flexDirection:"column",
     borderRadius:20,
     borderWidth:1,
     opacity:0.8,
@@ -770,7 +788,23 @@ elevation: 5
         
         width:WINDOW_WIDHT,
         flex:1,flexDirection:"row",justifyContent:"space-around",alignItems:"center"
-      },user_name:{
+      },flex_blue_btn:{
+        backgroundColor:"#0073F0",
+        borderRadius:10,
+        margin:10,
+        padding:15,
+        width:WINDOW_WIDHT*0.9,
+       
+      },flex_blue_btn_text:{
+        color:"#fff",
+        fontFamily:"GmarketSansTTFBold",
+        fontSize:WINDOW_WIDHT/20,
+        textAlign:"center",
+        justifyContent:"center",
+        alignItems:"center",
+        flexDirection:"column"
+      },
+      user_name:{
         color:"black",
         fontSize:WINDOW_WIDHT/23,
         fontWeight:"900",
@@ -791,7 +825,105 @@ elevation: 5
       opacity:0.3,
       color:"gray"
       
-      },
+      },big_img:{
+        flex:1,
+        width:WINDOW_WIDHT,
+        
+        borderRadius:10,
+        opacity:0.9
+      },img_button:{
+        resizeMode:"stretch",
+        width:WINDOW_WIDHT,
+        margin:10,
+        
+      },icon_img:{
+        resizeMode:"stretch",
+        width:20,
+        height:20,
+        margin:10
+      }
   
   })
-      
+  export const grany_start = StyleSheet.create({
+
+siteup_con:{
+flex:1,
+justifyContent:"center",
+alignItems:"center",
+textAlign:"center",
+flexDirection:"column"
+},
+form_title_con:{
+ 
+  justifyContent:"flex-start",
+  alignItems:"center",
+  textAlign:"center",
+  margin:10
+},
+form_title:{
+  color:"black",
+    fontSize:WINDOW_WIDHT/12,
+    fontWeight:"900",
+    fontFamily:"GmarketSansTTFBold",
+    opacity:0.8,
+    margin:10  
+  
+},form_text_input:{
+  flex:1,
+  flexDirection:"row",
+  borderRadius:5,
+  borderWidth:1,
+  opacity:0.8,
+  padding:10,
+
+
+  borderColor:"#f0f0f0"
+
+ 
+},form_text:{
+  color:"black",
+  fontSize:WINDOW_WIDHT/22,
+  fontWeight:"500",
+  fontFamily:"GmarketSansTTFLight",
+  opacity:0.8,
+
+},form_text_bold:{
+  color:"black",
+  fontSize:WINDOW_WIDHT/20,
+  
+  fontFamily:"GmarketSansTTFMedium",
+  opacity:0.8,
+
+},form_item:{
+  margin:10,
+  justifyContent:"space-around",textAlign:"center",flexDirection:"row",alignContent:"center"
+},form_btn:{
+  justifyContent:"center",
+  textAlign:"center",
+  alignItems:"center",
+
+  backgroundColor:"#0073F0",
+  borderRadius:5,
+ 
+  padding:5,
+ 
+},flex_blue_btn_text:{
+  color:"#fff",
+  fontFamily:"GmarketSansTTFLight",
+  fontSize:WINDOW_WIDHT/20,
+  textAlign:"center",
+  justifyContent:"center",
+  alignItems:"center",
+  flexDirection:"column"
+}
+,main_box_col:{
+  flex:1,
+  flexDirection:"column",
+  borderRadius:5,
+  borderWidth:1,
+  opacity:0.8,
+  padding:20,
+  borderColor:"#f0f0f0"
+}
+
+  })

@@ -15,6 +15,7 @@ import IC from "../CertificationTest/index"
 import Certification from '../Certification';
 import CertificationResult from '../CertificationResult';
 import KakaoLogin from '../kakao/KakaoLogin';
+import Start_user from '../kakao/Start_user';
 const Tab = createMaterialBottomTabNavigator();
 const WINDOW_WIDHT = Dimensions.get("window").width; // Dimensions.get("screen").width;
 const WINDOW_HEIGHT = Dimensions.get("window").height;
@@ -76,7 +77,7 @@ function BottomTabNav() {
     />
     <Tab.Screen
       name="사용자"
-      component={HomeScreen}
+      component={Start_user}
       options={{
         tabBarLabel: '사용자',
         tabBarIcon: ({ color }) => (
