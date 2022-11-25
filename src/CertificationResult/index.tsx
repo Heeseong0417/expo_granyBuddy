@@ -2,14 +2,35 @@ import React from 'react';
 import { Icon, IconButton, List, Text } from 'native-base';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import axios from 'axios';
 
 export default function CertificationResult({ route, navigation }:any) {
   const success = route.params.success;
   const imp_uid = route.params.imp_uid;
   const merchant_uid = route.params.merchant_uid;
   const error_msg = route.params.error_msg;
+  const Uri = 'http://10.0.2.2:8080/recive'
 
-  return (
+const axios_data =(data: any)=>{  
+  const Uri = 'http://10.0.2.2:8080/recive'
+  const data_test = {
+    userId :"testid",
+userPassword :"testpassword",
+userName :"김철수",
+userPhone :"01033333333",
+userAddress :"경기도 성남시",
+userKakao :"카카오아이디",
+userPay :"페이",
+startDate :"데이트",
+userLevel :"일반",
+notice :"없음"
+  }
+  axios.post(Uri,data_test).then(function (response: { data: { access_token: string; }; }) {
+
+})
+ 
+}  
+return (
     <SafeAreaView
       style={{
         flex: 1,
@@ -57,7 +78,17 @@ export default function CertificationResult({ route, navigation }:any) {
       <IconButton
         icon={<Icon as={FontAwesome} name={'arrow-left'} size={20} />}
         /* @ts-ignore */
-        onPress={() => navigation.navigate('Home')}
+        
+        onPress={() => 
+  {        console.log(route.params)
+
+          navigation.reset({
+            routes: [{
+                name: 'Start_user',
+                 
+              }]
+          })}
+        }
       >
         <Text>돌아가기</Text>
       </IconButton>

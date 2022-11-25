@@ -7,6 +7,9 @@ import Loading from '../Loading/index';
 export default function Certification({ route, navigation }:any) {
   const params = route.params.params;
   const tierCode = route.params.tierCode;
+  console.log("파라미터데이터 : ",JSON.stringify(params))
+  const username = route.params.name;
+  const userPnumber = route.params.phone;
   const userCode = getUserCode('danal', tierCode, 'certification');
 
   return (
@@ -17,7 +20,7 @@ export default function Certification({ route, navigation }:any) {
         data={params}
        
         callback={(response) =>
-          navigation.replace('CertificationResult', response)
+          navigation.replace('SiteUp', {response,params})
         }
       />
     </SafeAreaView>

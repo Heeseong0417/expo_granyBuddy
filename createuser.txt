@@ -1,0 +1,26 @@
+CREATE TABLE GRANY_USER(
+  userId VARCHAR2(50),
+  userPassword VARCHAR2(100) NOT NULL,
+  userName VARCHAR2(30) NOT NULL,
+  userPhone VARCHAR2(100) NOT NULL,
+  userAddress VARCHAR2(100) NOT NULL,
+  userKakao VARCHAR2(100) NOT NULL,
+  userPay VARCHAR2(100) NOT NULL,
+  startDate DATE NOT NULL,
+  userLevel VARCHAR2(100) NOT NULL,
+  notice VARCHAR2(100) ,
+  PRIMARY KEY(userId)
+);
+commit;
+
+
+userId :"",
+userPassword :"",
+userName :"",
+userPhone :"",
+userAddress :"",
+userKakao :"",
+userPay :"",
+startDate :"",
+userLevel :"",
+notice :""

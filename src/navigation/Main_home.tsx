@@ -17,7 +17,7 @@ import Screen1 from "./screen1"
 import Screen2 from "./screen2"
 import None1 from "./None";
 import BottomTabNav from "./BottomTabNav";
-import StartNavigation from "./StartNavigation";
+import StartNavigation from "../kakao/StartNavigation";
 const { width,height } = Dimensions.get('window');
 const Main_home =()=>{
 

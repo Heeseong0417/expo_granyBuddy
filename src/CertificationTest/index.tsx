@@ -16,7 +16,8 @@ import {
 } from 'react-native-safe-area-context';
 
 export default function CertificationTest({ navigation }:any) {
-  const [merchantUid, setMerchantUid] = useState(`mid_${new Date().getTime()}`);
+//  const [merchantUid, setMerchantUid] = useState(`mid_${new Date().getTime()}`);
+const [merchantUid, setMerchantUid] = useState(`imp04335465`);
   const [company, setCompany] = useState('아임포트');
   const [carrier, setCarrier] = useState('SKT');
   const [name, setName] = useState('');
