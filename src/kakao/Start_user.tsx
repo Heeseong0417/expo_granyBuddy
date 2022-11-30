@@ -97,6 +97,8 @@ const Start_user =({navigation}:any)=>{
 
             <TouchableOpacity style={[grany_home.flex_blue_btn,{marginBottom:20}]} onPress={()=> 
              {
+
+              /**
               const data = {
                 params: {
                   merchant_uid: "merchantUid",
@@ -107,10 +109,10 @@ const Start_user =({navigation}:any)=>{
                   min_age: minAge,
                 },
                 tierCode,
-              };
+              }; */
               //navigation.navigate('Certification', data); 
              // navigation.navigate("CertificationTest")
-             axios_data()
+             navigation.navigate("Login")
               }}>
 
 <Text  style={[grany_home.flex_blue_btn_text]}>시작하기</Text>

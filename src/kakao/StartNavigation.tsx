@@ -9,6 +9,7 @@ import CertificationTest from "../CertificationTest";
 import Certification from "../Certification";
 import CertificationResult from "../CertificationResult";
 import UserCertifcationForm from "./UserCertifcationForm";
+import Login from "./Login";
 
 
 const StartNavigation=()=>{
@@ -83,6 +84,15 @@ const StartNavigation=()=>{
    
         />
           <Stack.Screen name='UserCertifcationForm' component={UserCertifcationForm}
+        /** sharedElements={(route: any) => {
+          const { item }  = route.params;
+          console.log(JSON.stringify(item))
+          return [{ id: `item_${item.id}_image`, animation: "move" }];
+        }} */
+   
+   
+        />
+        <Stack.Screen name='Login' component={Login}
         /** sharedElements={(route: any) => {
           const { item }  = route.params;
           console.log(JSON.stringify(item))

@@ -1,14 +1,26 @@
 CREATE TABLE GRANY_USER(
   userId VARCHAR2(50),
-  userPassword VARCHAR2(100) NOT NULL,
-  userName VARCHAR2(30) NOT NULL,
-  userPhone VARCHAR2(100) NOT NULL,
-  userAddress VARCHAR2(100) NOT NULL,
-  userKakao VARCHAR2(100) NOT NULL,
-  userPay VARCHAR2(100) NOT NULL,
+  userPassword VARCHAR(100) NOT NULL,
+  userName VARCHAR(30) NOT NULL,
+  userPhone VARCHAR(100) NOT NULL,
+  userAddress VARCHAR(100) NOT NULL,
+  userKakao VARCHAR(100) NOT NULL,
+  userPay VARCHAR(100) NOT NULL,
   startDate DATE NOT NULL,
-  userLevel VARCHAR2(100) NOT NULL,
-  notice VARCHAR2(100) ,
+  userLevel VARCHAR(100) NOT NULL,
+  notice VARCHAR(100) ,
+  PRIMARY KEY(userId)
+);
+commit;
+
+CREATE TABLE GRANY_PARENT(
+  userId VARCHAR(50),
+  parentName VARCHAR(30) NOT NULL,
+  parenPhone VARCHAR(100) NOT NULL,
+  parenAddress VARCHAR(100) NOT NULL,
+  startDate DATE NOT NULL,
+  userLevel VARCHAR(100) NOT NULL,
+  notice VARCHAR(100) ,
   PRIMARY KEY(userId)
 );
 commit;
@@ -24,3 +36,4 @@ userPay :"",
 startDate :"",
 userLevel :"",
 notice :""
+

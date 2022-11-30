@@ -37,6 +37,7 @@ const axios_data =()=>{
   
     const Uri = 'http://10.0.2.2:8080/site_up'
     const data_test = {
+      company:"(주)밸리언트데이터",
       userId :form.user.id,
   userPassword :form.user.password,
   userName :params.name,
@@ -52,9 +53,21 @@ const axios_data =()=>{
     }
     console.log(JSON.stringify(data_test))
     alert(JSON.stringify(data_test))
+    
+
     axios.post(Uri, data_test).then(function (response) {
       console.log(JSON.stringify(response.data))
-  })
+       navigation.reset({routes: [{name: 'Start_user'}]})
+    }).catch(function (error) {
+      console.log(error);
+     Alert.alert("에러가 발생하였습니다! 다시 가입해주세요") 
+    })
+
+     
+  
+    
+
+
 }   
 const [form, setform] = useState({user:{ id:"",siteid:"",password:"",address:"",address_l:"",Pnumber:""},
 parent:{name:"",address:"",Pnumber:""}
